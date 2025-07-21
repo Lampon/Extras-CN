@@ -2,7 +2,10 @@
     "version": "7.37",
     "description": "解压缩软件",
     "homepage": "https://www.bandisoft.com/bandizip/",
-    "hash":"568446bd0e25614bf5590e6136351095c5229715e171f85ea24d62373be6be0a",
+    "hash": "568446bd0e25614bf5590e6136351095c5229715e171f85ea24d62373be6be0a",
     "license": "unkown",
-    "url": "https://assets.lampon.cn/apps/Bandizip_7.37_64bit_Setup.exe"
+    "url": "https://assets.lampon.cn/apps/Bandizip_7.37_64bit_Setup.exe",
+    "installer": {
+        "args": ["/S", "/D=\"$dir\""]
+    }
 }

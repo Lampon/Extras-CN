@@ -9,7 +9,7 @@
             "hash": "568446bd0e25614bf5590e6136351095c5229715e171f85ea24d62373be6be0a",
             "installer": {
                 "script": [
-                    "Start-Process -FilePath \"$dir\\Bandizip_7.37_64bit_Setup.exe\" -ArgumentList \"/S /D:$dir\" -Wait | Out-Null"
+                    "Start-Process -FilePath \"$dir\\Bandizip_7.37_64bit_Setup.exe\" -ArgumentList \"/S /D:`\"$dir`\"\" -Wait | Out-Null"
                 ]
             }
         }

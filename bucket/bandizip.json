@@ -1,19 +1,10 @@
 {
     "version": "7.37",
-    "description": "解压缩软件",
+    "description": "Unzipping software",
     "homepage": "https://www.bandisoft.com/bandizip/",
     "license": "Freeware",
-    "architecture": {
-        "64bit": {
-            "url": "https://assets.lampon.cn/apps/Bandizip_7.37_64bit_Setup.exe",
-            "hash": "568446bd0e25614bf5590e6136351095c5229715e171f85ea24d62373be6be0a",
-            "installer": {
-                "script": [
-                    "Start-Process -FilePath \"$dir\\Bandizip_7.37_64bit_Setup.exe\" -ArgumentList \"/S /D:`\"$dir`\"\" -Wait | Out-Null"
-                ]
-            }
-        }
-    },
+    "url": "https://assets.lampon.cn/apps/Bandizip_7.37_64.7z",
+    "hash": "88eee1ecc6b2dc8c6f4ee16fb41af92932b5e770d7ea9adf5f64342250ebee62",
     "bin": [
         "Bandizip.exe"
     ],
@@ -23,15 +14,18 @@
             "Bandizip"
         ]
     ],
-    "checkver": {
-        "url": "https://www.bandisoft.com/bandizip/history/",
-        "regex": "v([\\d.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://assets.lampon.cn/apps/Bandizip_$version_64bit_Setup.exe"
-            }
-        }
-    }
+    "post_install": [
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v Publisher /d \"423Down\" /f",
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayName /d \"Bandizip Professional\" /f",
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayVersion /d \"7.37\" /f",
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v NoRepair /t REG_DWORD /d 1 /f",
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v NoModify /t REG_DWORD /d 1 /f",
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v InstallLocation /d \"$dir\" /f",
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayIcon /d \"$dir\\Bandizip.exe\" /f",
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v UninstallString /d \"$dir\\Uninstall.exe\" /f",
+        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v HelpLink /d \"https://www.423down.com/9735.html\" /f"
+    ],
+    "pre_uninstall": [
+        "reg delete \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /f"
+    ]
 }

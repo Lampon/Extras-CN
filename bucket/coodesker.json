@@ -9,9 +9,15 @@
             "hash": "b633859f9b76714a4c1b1d82de1b3b3fa3223cd481f7ece3f9bd972cd1b3a2c4"
         }
     },
-    "installer": {
-        "script": [
-            "Start-Process -FilePath \"$dir\\Coodesker-x64_1.0.exe\" -ArgumentList '/SILENT', '/DIR=$dir' -Wait"
+    "extract_dir": ".",
+    "shortcuts": [
+        [
+            "Coodesker.exe",
+            "Coodesker"
         ]
-    }
+    ],
+    "persist": [
+        "data",
+        "config"
+    ]
 }

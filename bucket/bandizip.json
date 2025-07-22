@@ -15,21 +15,9 @@
         ]
     ],
     "post_install": [
-        "$cmd = 'reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipExtractHere\" /ve /d \"用 Bandizip 解压到当前目录\" /f'",
-        "iex $cmd",
-        "$cmd = 'reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipExtractHere\" /v Icon /d \"' + $dir + '\\Bandizip.exe\" /f'",
-        "iex $cmd",
-        "$cmd = 'reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipExtractHere\\command\" /ve /d \"\"' + $dir + '\\Bandizip.exe\" x \"%1\"\" /f'",
-        "iex $cmd",
-        "$cmd = 'reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipOpen\" /ve /d \"用 Bandizip 打开\" /f'",
-        "iex $cmd",
-        "$cmd = 'reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipOpen\" /v Icon /d \"' + $dir + '\\Bandizip.exe\" /f'",
-        "iex $cmd",
-        "$cmd = 'reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipOpen\\command\" /ve /d \"\"' + $dir + '\\Bandizip.exe\" \"%1\"\" /f'",
-        "iex $cmd"
+ 
     ],
     "pre_uninstall": [
-        "reg delete \"HKCU\\Software\\Classes\\*\\shell\\BandizipExtractHere\" /f",
-        "reg delete \"HKCU\\Software\\Classes\\*\\shell\\BandizipOpen\" /f"
+       
     ]
 }

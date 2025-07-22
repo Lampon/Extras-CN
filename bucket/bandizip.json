@@ -23,9 +23,16 @@
         "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v InstallLocation /d \"$dir\" /f",
         "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayIcon /d \"$dir\\Bandizip.exe\" /f",
         "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v UninstallString /d \"$dir\\Uninstall.exe\" /f",
-        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v HelpLink /d \"https://www.423down.com/9735.html\" /f"
+        "reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipExtractHere\" /ve /d \"用 Bandizip 解压到当前目录\" /f",
+        "reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipExtractHere\" /v Icon /d \"$dir\\Bandizip.exe\" /f",
+        "reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipExtractHere\\command\" /ve /d \"\"$dir\\Bandizip.exe\" x \"%1\"\" /f",
+        "reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipOpen\" /ve /d \"用 Bandizip 打开\" /f",
+        "reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipOpen\" /v Icon /d \"$dir\\Bandizip.exe\" /f",
+        "reg add \"HKCU\\Software\\Classes\\*\\shell\\BandizipOpen\\command\" /ve /d \"\"$dir\\Bandizip.exe\" \"%1\"\" /f"
     ],
     "pre_uninstall": [
-        "reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /f"
+        "reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /f",
+        "reg delete \"HKCU\\Software\\Classes\\*\\shell\\BandizipExtractHere\" /f",
+        "reg delete \"HKCU\\Software\\Classes\\*\\shell\\BandizipOpen\" /f"
     ]
 }

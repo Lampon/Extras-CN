@@ -3,12 +3,12 @@
     "description": "桌面整理软件",
     "homepage": "https://www.coodesker.com/",
     "license": "Freeware",
-    "url": "https://assets.lampon.cn/apps/Coodesker.7z",
-    "hash": "62eb134e788fe4c79683fed417f6d1bfcc4159416489f9eb7c126474cda4d474",
-    "extract_dir": ".",
+    "url": "https://assets.lampon.cn/apps/Coodesker-x64_1.1.0.7z",
+    "hash": "af254f034468f2c287acbdecac2be74c1c5b8b002fd3dad1fb38adb4c65effd2",
+    "bin": "coodesker-x64.exe",
     "shortcuts": [
         [
-            "Coodesker.exe",
+            "coodesker-x64.exe",
             "Coodesker"
         ]
     ],

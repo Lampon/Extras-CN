@@ -15,17 +15,17 @@
         ]
     ],
     "post_install": [
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v Publisher /d \"423Down\" /f",
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayName /d \"Bandizip Professional\" /f",
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayVersion /d \"7.37\" /f",
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v NoRepair /t REG_DWORD /d 1 /f",
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v NoModify /t REG_DWORD /d 1 /f",
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v InstallLocation /d \"$dir\" /f",
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayIcon /d \"$dir\\Bandizip.exe\" /f",
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v UninstallString /d \"$dir\\Uninstall.exe\" /f",
-        "reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v HelpLink /d \"https://www.423down.com/9735.html\" /f"
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v Publisher /d \"423Down\" /f",
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayName /d \"Bandizip Professional\" /f",
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayVersion /d \"7.37\" /f",
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v NoRepair /t REG_DWORD /d 1 /f",
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v NoModify /t REG_DWORD /d 1 /f",
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v InstallLocation /d \"$dir\" /f",
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v DisplayIcon /d \"$dir\\Bandizip.exe\" /f",
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v UninstallString /d \"$dir\\Uninstall.exe\" /f",
+        "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /v HelpLink /d \"https://www.423down.com/9735.html\" /f"
     ],
     "pre_uninstall": [
-        "reg delete \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /f"
+        "reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Bandizip\" /f"
     ]
 }
